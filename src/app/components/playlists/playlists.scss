@@ -1,0 +1,21 @@
+:host {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-view {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin: 40px 0;
+
+  @media screen and (min-width: 600px) {
+    gap: 10px;
+  }
+}

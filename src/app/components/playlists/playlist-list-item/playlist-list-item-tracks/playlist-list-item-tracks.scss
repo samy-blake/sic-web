@@ -1,0 +1,45 @@
+.tracks {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.175);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.song-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &-image {
+    flex-shrink: 0;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  &-title {
+    flex: 1 1 auto;
+
+    &-name {
+      font-size: clamp(0.875rem, 0.5625rem + 1vw, 1.125rem);
+    }
+
+    &-artists {
+      font-size: clamp(0.75rem, 0.5938rem + 0.5vw, 0.875rem);
+    }
+  }
+
+  &-button {}
+}

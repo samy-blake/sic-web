@@ -1,0 +1,30 @@
+@if (show()) {
+<div class="tracks">
+  @if (process()) {
+  <ng-icon name="faBrandSpotify"></ng-icon>
+  } @else {
+  <ul class="song-list">
+    @for (song of songs; track song.song.id) {
+    <li class="song">
+      <div class="song-image">
+        <img [src]="song.song.image" alt="" loading="lazy">
+      </div>
+      <div class="song-title">
+        <div class="song-title-name">
+          {{song.song.name}}
+        </div>
+        <div class="song-title-artists">
+          {{song.song.artists}}
+        </div>
+      </div>
+      <div class="song-button">
+        <button type="button" class="g-glass-btn --round" (click)="openSpotify(song.song)">
+          <ng-icon name="faBrandSpotify"></ng-icon>
+        </button>
+      </div>
+    </li>
+    }
+  </ul>
+  }
+</div>
+}

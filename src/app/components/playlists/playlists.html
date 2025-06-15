@@ -1,0 +1,5 @@
+<div class="list-view">
+  @for (playlist of playlists; track playlist.id) {
+    <app-playlist-list-item [playlist]="playlist"></app-playlist-list-item>
+  }
+</div>

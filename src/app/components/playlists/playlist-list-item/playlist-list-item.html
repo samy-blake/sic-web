@@ -1,0 +1,36 @@
+<div class="item">
+
+  <div class="image">
+    <img [src]="playlist().image" alt="" loading="lazy">
+  </div>
+
+  <div class="content">
+    <div class="text">
+      <div class="name">
+        {{playlist().name}}
+      </div>
+
+      <div class="genre">
+        {{playlist().genre}}
+      </div>
+
+      <div class="songs">
+        {{playlist()._count.songs}} Songs
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="g-glass-btn --round" (click)="openSpotify()">
+        <ng-icon name="faBrandSpotify"></ng-icon>
+      </button>
+      <button type="button" class="g-glass-btn --round" [ngClass]="{'open': showTracks()}" (click)="toggleTracks()">
+        <ng-icon name="faSolidChevronDown"></ng-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="tracks">
+  <app-playlist-list-item-tracks [playlistId]="playlist().id" [show]="showTracks()">
+  </app-playlist-list-item-tracks>
+</div>
