@@ -20,14 +20,14 @@ export class PlaylistApi {
       );
     }
     return this.http.get<API.Playlists.Playlist[]>(
-      `${environment.apiRout}/playlist`,
+      `${environment.apiRoute}/playlist`,
       options,
     );
   }
 
   get(id: string): Observable<API.Playlist.Playlist> {
     return this.http.get<API.Playlist.Playlist>(
-      `${environment.apiRout}/playlist/${id}`,
+      `${environment.apiRoute}/playlist/${id}`,
     );
   }
 }

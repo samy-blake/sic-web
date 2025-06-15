@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:list';
 
 
 #background {
@@ -22,7 +23,7 @@ $sway-type: "sway-left-to-right", "sway-right-to-left";
 }
 
 @function sample($list) {
-  @return nth($list, random(length($list)));
+  @return list.nth($list, math.random(list.length($list)));
 }
 
 .bubbles {

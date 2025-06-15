@@ -1,10 +1,11 @@
+@use "./bg";
+
 /* You can add global styles to this file, and also import other style files */
 @font-face {
   font-family: "Iceland";
   src: url("../public/fonts/Iceland-Regular.ttf");
 }
 
-@import "./bg";
 
 body {
   background: #14113d;

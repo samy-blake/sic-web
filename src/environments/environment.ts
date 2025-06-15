@@ -1,3 +1,3 @@
 export const environment = {
-  apiRout: "/api",
+  apiRoute: "https://api.sic.spielwiese.ninja/api",
 };
