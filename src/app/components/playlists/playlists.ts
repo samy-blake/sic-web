@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, signal } from "@angular/core";
 import { PlaylistApi } from "../../service/playlist-api";
 import { API } from "../../interface/api";
 import { PlaylistListItem } from "./playlist-list-item/playlist-list-item";
@@ -11,13 +11,12 @@ import { PlaylistListItem } from "./playlist-list-item/playlist-list-item";
 })
 export class Playlists {
   private readonly _playlistApi = inject(PlaylistApi);
-  public playlists: API.Playlists.Playlist[] = [];
+  public playlists = signal<API.Playlists.Playlist[]>([]);
 
   constructor() {
     this._playlistApi.getAll().subscribe({
       next: (res: API.Playlists.Playlist[]) => {
-        this.playlists = res;
-        // console.log(this.playlists);
+        this.playlists.set(res);
       },
       error: (err) => {
         console.error(err);
