@@ -17,6 +17,7 @@ export class Playlists {
     this._playlistApi.getAll().subscribe({
       next: (res: API.Playlists.Playlist[]) => {
         this.playlists = res;
+        // console.log(this.playlists);
       },
       error: (err) => {
         console.error(err);
