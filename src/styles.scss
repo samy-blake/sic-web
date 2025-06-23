@@ -30,6 +30,11 @@ body {
   box-sizing: border-box;
 }
 
+app-root {
+  position: relative;
+  z-index: 1;
+}
+
 
 .g-glass-btn {
   background: rgba(255, 255, 255, 0.35);

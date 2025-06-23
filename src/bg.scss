@@ -4,93 +4,92 @@
 
 #background {
   position: fixed;
-  // z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
-// Background animation https://codepen.io/alphardex/pen/jOWMGON
-
-$bubble-count: 50;
-$sway-type: "sway-left-to-right", "sway-right-to-left";
-
-@function random_range($min, $max) {
-  $rand: math.random();
-  $random_range: $min + math.floor($rand * (($max - $min) + 1));
-  @return $random_range;
+.circle-1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20vmin;
+  height: 20vmin;
+  background-color: rgb(59, 52, 167, .6);
+  border-radius: 100%;
+  animation: pulse-small 2s infinite;
 }
 
-@function sample($list) {
-  @return list.nth($list, math.random(list.length($list)));
+.circle-2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(48, 42, 138, 0.6);
+  border-radius: 100%;
+  animation: pulse-medium 2s infinite 200ms;
 }
 
-.bubbles {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  // filter: blur(10px);
+.circle-3 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(48, 42, 138, 0.6);
+  border-radius: 100%;
+  animation: pulse-large 2s infinite 400ms;
 }
 
-.bubble {
-  position: absolute;
-  left: var(--bubble-left-offset);
-  bottom: -75%;
-  display: block;
-  width: var(--bubble-radius);
-  height: var(--bubble-radius);
-  border-radius: 50%;
-  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
 
-  &::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: hsla(183, 94%, 76%, 0.3);
-    border-radius: inherit;
-    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+@keyframes pulse-small {
+  0% {
+    width: 20vmin;
+    height: 20vmin;
   }
 
-  @for $i from 0 through $bubble-count {
-    &:nth-child(#{$i}) {
-      --bubble-left-offset: #{random_range(0vw, 100vw)};
-      --bubble-radius: #{random_range(4vw, 10vw)};
-      --bubble-float-duration: #{random_range(6s, 12s)};
-      --bubble-sway-duration: #{random_range(4s, 6s)};
-      --bubble-float-delay: #{random_range(0s, 4s)};
-      --bubble-sway-delay: #{random_range(0s, 4s)};
-      --bubble-sway-type: #{sample($sway-type)};
-    }
+  50% {
+    width: 25vmin;
+    height: 25vmin;
+  }
+
+  100% {
+    width: 20vmin;
+    height: 20vmin;
   }
 }
 
-@keyframes float-up {
-  to {
-    transform: translateY(-175vh);
+@keyframes pulse-medium {
+  0% {
+    width: 35vmin;
+    height: 35vmin;
+  }
+
+  50% {
+    width: 40vmin;
+    height: 40vmin;
+  }
+
+  100% {
+    width: 35vmin;
+    height: 35vmin;
   }
 }
 
-@keyframes sway-left-to-right {
-  from {
-    transform: translateX(-100%);
+@keyframes pulse-large {
+  0% {
+    width: 50vmin;
+    height: 50vmin;
   }
 
-  to {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes sway-right-to-left {
-  from {
-    transform: translateX(100%);
+  50% {
+    width: 55vmin;
+    height: 55vmin;
   }
 
-  to {
-    transform: translateX(-100%);
+  100% {
+    width: 50vmin;
+    height: 50vmin;
   }
 }
