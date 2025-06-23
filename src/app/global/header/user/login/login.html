@@ -1,0 +1,26 @@
+<form (ngSubmit)="submit()" [formGroup]="formGroup">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Benutzername</mat-label>
+      <input matInput placeholder="Benutzername" formControlName="username">
+      <ng-icon matSuffix name="faSolidUser"></ng-icon>
+      <mat-hint>mind. 3 Zeichen</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="********" type="password" formControlName="password">
+      <ng-icon matSuffix name="faSolidLock"></ng-icon>
+      <mat-hint>mind. 3 Zeichen</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-slide-toggle formControlName="remember">angemeldet bleiben</mat-slide-toggle>
+  </p>
+
+  <p>
+    <button type="submit">Absenden</button>
+  </p>
+
+</form>
