@@ -1,7 +1,15 @@
 <header class="header">
-  <button type="button" class="user-btn" (click)="openUserDialog()">
-    <ng-icon name="faSolidChevronDown" class="hover-icon"></ng-icon>
+  <button type="button" class="left" (click)="openMakerDialog()">
+    <span>Persons</span>
+    <ng-icon name="faSolidPeopleGroup"></ng-icon>
+  </button>
 
+  <button type="button" class="middle" (click)="openMissionDialog()">
+    <ng-icon name="faSolidPodcast"></ng-icon>
+  </button>
+
+  <button type="button" class="right" (click)="openUserDialog()">
     <ng-icon name="faSolidUserSecret"></ng-icon>
+    <span>Profil</span>
   </button>
 </header>
