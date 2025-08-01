@@ -1,95 +1,20 @@
-@use 'sass:math';
-@use 'sass:list';
-
-
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
-.circle-1 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20vmin;
-  height: 20vmin;
-  background-color: rgb(59, 52, 167, .6);
-  border-radius: 100%;
-  animation: pulse-small 2s infinite;
-}
-
-.circle-2 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(48, 42, 138, 0.6);
-  border-radius: 100%;
-  animation: pulse-medium 2s infinite 200ms;
-}
-
-.circle-3 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(48, 42, 138, 0.6);
-  border-radius: 100%;
-  animation: pulse-large 2s infinite 400ms;
-}
-
-
-@keyframes pulse-small {
+@keyframes gradient {
   0% {
-    width: 20vmin;
-    height: 20vmin;
+    background-position: 0% 50%;
   }
 
   50% {
-    width: 25vmin;
-    height: 25vmin;
+    background-position: 100% 50%;
   }
 
   100% {
-    width: 20vmin;
-    height: 20vmin;
-  }
-}
-
-@keyframes pulse-medium {
-  0% {
-    width: 35vmin;
-    height: 35vmin;
-  }
-
-  50% {
-    width: 40vmin;
-    height: 40vmin;
-  }
-
-  100% {
-    width: 35vmin;
-    height: 35vmin;
-  }
-}
-
-@keyframes pulse-large {
-  0% {
-    width: 50vmin;
-    height: 50vmin;
-  }
-
-  50% {
-    width: 55vmin;
-    height: 55vmin;
-  }
-
-  100% {
-    width: 50vmin;
-    height: 50vmin;
+    background-position: 0% 50%;
   }
 }
