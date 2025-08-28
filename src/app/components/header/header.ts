@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 // import { NgIcon, provideIcons, provideNgIconsConfig } from "@ng-icons/core";
 // import {
@@ -17,6 +18,7 @@ import { Component } from "@angular/core";
   // ],
   templateUrl: "./header.html",
   styleUrl: "./header.scss",
+  imports: [RouterLink],
 })
 export class Header {
 }

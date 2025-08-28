@@ -1,6 +1,6 @@
 import { Component, effect, inject, input, signal } from "@angular/core";
-import { PlaylistApi } from "../../../../service/playlist-api";
-import { API } from "../../../../interface/api";
+import { PlaylistApi } from "../../../service/playlist-api";
+import { API } from "../../../interface/api";
 import { faBrandSpotify } from "@ng-icons/font-awesome/brands";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 

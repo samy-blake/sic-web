@@ -1,5 +1,5 @@
 import { Component, input, signal } from "@angular/core";
-import { API } from "../../../interface/api";
+import { API } from "../../interface/api";
 import { NgIcon, provideIcons } from "@ng-icons/core";
 import { faBrandSpotify } from "@ng-icons/font-awesome/brands";
 import { faSolidChevronDown } from "@ng-icons/font-awesome/solid";

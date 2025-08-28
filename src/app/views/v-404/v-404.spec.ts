@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Playlists } from './playlists';
+import { V404 } from './v-404';
 
-describe('Playlists', () => {
-  let component: Playlists;
-  let fixture: ComponentFixture<Playlists>;
+describe('V404', () => {
+  let component: V404;
+  let fixture: ComponentFixture<V404>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Playlists]
+      imports: [V404]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Playlists);
+    fixture = TestBed.createComponent(V404);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

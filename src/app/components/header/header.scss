@@ -1,0 +1,33 @@
+:host {
+  display: inline-block;
+  height: 66px;
+}
+
+.header {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(132, 132, 136, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.menu {
+  display: flex;
+
+  li {
+    display: flex;
+  }
+}
+
+a {
+  padding: 20px;
+}
