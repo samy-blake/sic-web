@@ -8,7 +8,7 @@ import { environment } from "../../environments/environment";
   providedIn: "root",
 })
 export class PlaylistApi {
-  private http = inject(HttpClient);
+  private _http = inject(HttpClient);
 
   getAll(params?: API.Playlists.Params): Observable<API.Playlists.Playlist[]> {
     const options: { params?: HttpParams } = {};
@@ -19,14 +19,14 @@ export class PlaylistApi {
         },
       );
     }
-    return this.http.get<API.Playlists.Playlist[]>(
+    return this._http.get<API.Playlists.Playlist[]>(
       `${environment.apiRoute}/playlist`,
       options,
     );
   }
 
   get(id: string): Observable<API.Playlist.Playlist> {
-    return this.http.get<API.Playlist.Playlist>(
+    return this._http.get<API.Playlist.Playlist>(
       `${environment.apiRoute}/playlist/${id}`,
     );
   }

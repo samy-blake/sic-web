@@ -43,4 +43,39 @@ export namespace API {
       updatedAt: string;
     }
   }
+
+  export namespace Auth {
+    export interface RegisterBody {
+      username: string;
+      password: string;
+      email?: string;
+    }
+
+    export interface LoginBody {
+      username: string;
+      password: string;
+    }
+
+    export interface LoginResponse {
+      token: string;
+    }
+  }
+
+  export namespace Spotify {
+    export interface SetUserTokenBody {
+      access_token: string;
+      token_type: string;
+      expires_in: number;
+      refresh_token: string;
+      expires?: number;
+    }
+
+    export interface AccessResponse {
+      access_token: string;
+      token_type: string;
+      expires_in: number;
+      refresh_token: string;
+      expires?: number;
+    }
+  }
 }

@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="registerSubmit()">
+  @if (showError()) {
+  <p-message severity="error">
+    Du konntest nicht angelegt werden, versuche ein anderen Benutzernamen.
+  </p-message>
+  }
+
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <ng-icon name="faSolidUser"></ng-icon>
+    </p-inputgroup-addon>
+    <input pInputText formControlName="username" placeholder="Benutzername" />
+  </p-inputgroup>
+  <!-- @if (form.controls.username.errors?.['required']) {
+  <p-message>Benutzername ist notwendig</p-message>
+  } -->
+  <br>
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <ng-icon name="faSolidLock"></ng-icon>
+    </p-inputgroup-addon>
+    <input pInputText type="password" formControlName="password" placeholder="Passwort" />
+  </p-inputgroup>
+  <br>
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <ng-icon name="faSolidEnvelope"></ng-icon>
+    </p-inputgroup-addon>
+    <input pInputText type="email" formControlName="email" placeholder="E-Mail" />
+  </p-inputgroup>
+  <br>
+  <button pButton type="submit" [disabled]="isProcess()">
+    <span pButtonLabel>Registrieren</span>
+  </button>
+
+  @if (showSuccess()) {
+  <p-message severity="success">
+    Regestrierung erfolgreich, meld dich an. <br>
+    <a href="" [routerLink]="['/user/login']"></a>
+  </p-message>
+  }
+
+</form>

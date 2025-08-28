@@ -1,5 +1,8 @@
-@if (isAuth()) {
-
-} @else {
-<app-user-register></app-user-register>
+@if (showSpotifyBtn()) {
+<button pButton (click)="linkSpotify()">
+  <ng-icon name="faBrandSpotify"></ng-icon>
+  Spotify verbinden
+</button>
 }
+
+Hello :)

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserRegister } from './user-register';
+import { VAuth } from './v-auth';
 
-describe('UserRegister', () => {
-  let component: UserRegister;
-  let fixture: ComponentFixture<UserRegister>;
+describe('VAuth', () => {
+  let component: VAuth;
+  let fixture: ComponentFixture<VAuth>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UserRegister]
+      imports: [VAuth]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserRegister);
+    fixture = TestBed.createComponent(VAuth);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

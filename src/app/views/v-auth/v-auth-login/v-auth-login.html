@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="loginSubmit()">
+  @if (showError()) {
+  <p-message severity="error">
+    Anmeldedaten falsch.
+  </p-message>
+  }
+
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <ng-icon name="faSolidUser"></ng-icon>
+    </p-inputgroup-addon>
+    <input pInputText formControlName="username" placeholder="Benutzername" />
+  </p-inputgroup>
+  <br>
+  <p-inputgroup>
+    <p-inputgroup-addon>
+      <ng-icon name="faSolidLock"></ng-icon>
+    </p-inputgroup-addon>
+    <input pInputText type="password" formControlName="password" placeholder="Passwort" />
+  </p-inputgroup>
+  <br>
+  <button pButton type="submit" [disabled]="isProcess()">
+    <span pButtonLabel>Anmelden</span>
+  </button>
+
+</form>
